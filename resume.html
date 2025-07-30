@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Munene Denis | Futuristic CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles & Variables */
+        :root {
+            --primary-bg: #0a0a1a;
+            --secondary-bg: #1a1a3a;
+            --accent-color: #00e6e6; /* Cyan */
+            --text-color: #e0e0e0;
+            --heading-color: #00ffff; /* Brighter Cyan */
+            --border-color: #008080; /* Darker Cyan */
+            --glow-color: rgba(0, 255, 255, 0.4);
+            --gradient-start: #0f1c2e;
+            --gradient-end: #0a0a1a;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #fff; /* White background for better PDF printing */
+            color: #333; /* Darker text for better readability on print */
+            line-height: 1.4; /* Slightly reduced line height */
+            margin: 0;
+            padding: 15mm; /* Reduced padding for more space */
+            font-size: 10.5pt; /* Slightly smaller base font size */
+        }
+
+        /* CV Specific Layout */
+        .cv-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 15mm; /* Reduced gap */
+            max-width: 210mm; /* A4 width */
+            margin: 0 auto;
+            border: 1px solid #eee; /* Light border for structure */
+            box-shadow: 0 0 10px rgba(0,0,0,0.03); /* Subtle shadow */
+            padding: 10mm; /* Reduced padding */
+        }
+
+        .left-column {
+            background-color: #f8f8f8; /* Light grey background for left column */
+            padding: 10mm; /* Reduced padding */
+            border-radius: 6px; /* Slightly reduced border-radius */
+            text-align: center; /* Center content in left column */
+        }
+
+        .right-column {
+            padding: 10mm; /* Reduced padding */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #0056b3; /* Professional blue for headings */
+            margin-bottom: 0.4em; /* Reduced margin */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 2em; /* Slightly reduced font size */
+            text-align: center;
+            color: #003366;
+            margin-bottom: 0.8em; /* Reduced margin */
+        }
+
+        h2 {
+            font-size: 1.4em; /* Slightly reduced font size */
+            border-bottom: 1px solid #0056b3; /* Thinner border */
+            padding-bottom: 3px; /* Reduced padding */
+            margin-top: 1.2em; /* Reduced margin */
+            margin-bottom: 0.8em; /* Reduced margin */
+        }
+
+        h3 {
+            font-size: 1.1em; /* Slightly reduced font size */
+            color: #007bff; /* Lighter blue for subheadings */
+            margin-bottom: 0.4em; /* Reduced margin */
+        }
+
+        p {
+            margin-bottom: 0.7em; /* Reduced margin */
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0.8em; /* Reduced margin */
+        }
+
+        ul li {
+            margin-bottom: 0.4em; /* Reduced margin */
+            position: relative;
+            padding-left: 1.2em; /* Reduced padding */
+        }
+
+        ul li::before {
+            content: "\2022"; /* Bullet point */
+            color: #007bff;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Reduced gap */
+            margin-bottom: 0.4em; /* Reduced margin */
+        }
+
+        .contact-info i {
+            color: #007bff;
+            font-size: 1em; /* Slightly reduced font size */
+        }
+
+        .section {
+            margin-bottom: 1.2em; /* Reduced margin */
+        }
+
+        .experience-item, .education-item {
+            margin-bottom: 1em; /* Reduced margin */
+        }
+
+        .experience-item h3, .education-item h3 {
+            margin-bottom: 0.1em; /* Reduced margin */
+        }
+
+        .experience-item p, .education-item p {
+            margin-bottom: 0.1em; /* Reduced margin */
+            font-size: 0.9em; /* Slightly reduced font size */
+            color: #555;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px; /* Reduced gap */
+            justify-content: center; /* Center skill tags */
+        }
+
+        .skill-tag {
+            background-color: #e0f2f7; /* Light blue tag background */
+            color: #0056b3;
+            padding: 4px 8px; /* Reduced padding */
+            border-radius: 4px; /* Slightly reduced border-radius */
+            font-size: 0.85em; /* Slightly reduced font size */
+            font-weight: 500;
+        }
+
+        .profile-photo {
+            width: 100px; /* Reduced photo size */
+            height: 100px; /* Reduced photo size */
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 0.8em; /* Reduced margin */
+            border: 2px solid #007bff; /* Thinner border */
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2); /* Subtle glow */
+        }
+
+        /* Print specific styles */
+        @media print {
+            body {
+                background-color: #fff;
+                -webkit-print-color-adjust: exact; /* For WebKit browsers */
+                print-color-adjust: exact; /* Standard */
+            }
+            .cv-container {
+                border: none;
+                box-shadow: none;
+                padding: 0;
+            }
+            .left-column {
+                background-color: #f8f8f8 !important; /* Ensure background prints */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="left-column">
+            <img src="static/images/munene.jpg" alt="Your Profile Photo" class="profile-photo">
+            <h1>Munene Denis</h1>
+            <p style="text-align: center; color: #007bff; font-size: 0.95em;">Electrical & Electronic Engineer | AI & Data Science Specialist</p>
+
+            <div class="section contact-info">
+                <h2>Contact</h2>
+                <p><i class="fas fa-envelope"></i> munenendegwa6@gmail.com</p>
+                <p><i class="fas fa-phone"></i> +254 799954672</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/munene-ndegwa-7167b718a/" target="_blank">linkedin.com/in/munenedenis</a></p>
+                <p><i class="fab fa-github"></i> <a href="https://github.com/MUNENE1212" target="_blank">github.com/MUNENE1212</a></p>
+            </div>
+
+            <div class="section">
+                <h2>Skills</h2>
+                <div class="skills-list">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Machine Learning</span>
+                    <span class="skill-tag">Data Analysis</span>
+                    <span class="skill-tag">Backend Dev</span>
+                    <span class="skill-tag">Circuit Design</span>
+                    <span class="skill-tag">Entrepreneurship</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Certifications</h2>
+                <ul>
+                    <li>KIEP SKIES - Data Science & AI</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="section">
+                <h2>Summary</h2>
+                <p>Highly motivated Electrical and Electronic Engineer with expertise in AI, Data Science, and backend development. Proficient in Python, JavaScript, MongoDB, and Docker. Passionate about innovation, building scalable systems, and leveraging technology for real-world solutions. Experienced entrepreneur and community developer.</p>
+            </div>
+
+            <div class="section">
+                <h2>Experience</h2>
+                <div class="experience-item">
+                    <h3>Backend Engineer</h3>
+                    <p>Freelancer | Nairobi, Kenya | Jan 2023 - Present</p>
+                    <ul>
+                        <li>Developed scalable backend APIs (Python, FastAPI) and managed MongoDB databases.</li>
+                        <li>Implemented Docker for streamlined deployment.</li>
+                        <li>Collaborated with front-end teams for seamless integration.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Signal processing Intern</h3>
+                    <p>Kenya Broadcasting Corporation | Nairobi, Kenya | Jan 2024 - Dec 2024</p>
+                    <ul>
+                        <li>Assisted in signal system design and testing for clients.</li>
+                        <li>Conducted fault analysis and troubleshooting on signal processing systems.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>B.Sc. Electrical and Electronic Engineering</h3>
+                    <p>Jomo Kenyatta University of Agriculture and Technology | Juja, Kenya | 2017 - 2022</p>
+                    <ul>
+                        <li>Specialized in Digital Electronics and Control Engineering.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Projects</h2>
+                <div class="experience-item">
+                    <h3>Liquor Store Management System</h3>
+                    <ul>
+                        <li>Developed full-featured inventory and sales management platform with analytics.</li>
+                        <li>Technologies: Python, FastAPI, MongoDB, HTML, CSS.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Electronics E-Commerce Platform</h3>
+                    <ul>
+                        <li>Built online shopping experience with payment and inventory management.</li>
+                        <li>Technologies: Python, FastAPI, MongoDB, HTML, CSS.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>Retail Shop Management Suite</h3>
+                    <ul>
+                        <li>Created comprehensive solution for retail operations (POS, inventory, sales forecasting).</li>
+                        <li>Technologies: Python, FastAPI, MongoDB, HTML, CSS.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
