@@ -1,0 +1,13 @@
+
+version: '3.8'
+
+services:
+  web:
+    # Build the Docker image using the Dockerfile in the current directory
+    build:
+      context: .
+    
+    # Map port 8080 on your local machine to port 80 in the container.
+    # This allows you to access the site by going to http://localhost:8080.
+    ports:
+      - "8080:80"
