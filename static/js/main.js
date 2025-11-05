@@ -6,22 +6,16 @@
 const initMobileNav = () => {
     const nav = document.querySelector('nav');
     const navLinks = document.querySelector('.nav-links');
+    const hamburger = document.querySelector('.hamburger');
 
-    // Create hamburger menu
-    const hamburger = document.createElement('div');
-    hamburger.className = 'hamburger';
-    hamburger.innerHTML = `
-        <span></span>
-        <span></span>
-        <span></span>
-    `;
-
-    // Insert hamburger after logo
-    const navContainer = document.querySelector('.nav-container');
-    navContainer.appendChild(hamburger);
+    if (!hamburger || !navLinks) {
+        console.warn('Navigation elements not found');
+        return;
+    }
 
     // Toggle menu
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
         document.body.classList.toggle('menu-open');

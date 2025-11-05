@@ -18,6 +18,10 @@
             box-sizing: border-box;
         }
         
+        html {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Exo 2', sans-serif;
             background-color: var(--background);
@@ -25,7 +29,9 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
-            background: 
+            width: 100%;
+            max-width: 100vw;
+            background:
                 radial-gradient(circle at 10% 20%, rgba(255, 87, 34, 0.1) 0%, transparent 25%),
                 radial-gradient(circle at 90% 80%, rgba(255, 152, 0, 0.1) 0%, transparent 25%),
                 linear-gradient(135deg, #0c0c18 0%, #1a1a2e 100%);
@@ -236,6 +242,8 @@
         section {
             padding: 6rem 0;
             position: relative;
+            overflow-x: hidden;
+            width: 100%;
         }
         
         /* Navigation */
@@ -255,6 +263,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
         
         .logo {
@@ -326,7 +335,7 @@
         
         /* Enhanced Hero Section with Centered Skill Highlights */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -334,24 +343,29 @@
             position: relative;
             overflow: hidden;
             padding-top: 70px;
+            padding-bottom: 2rem;
         }
-        
+
         .hero-content {
+            width: 100%;
             max-width: 900px;
+            margin: 0 auto;
             z-index: 2;
             position: relative;
             text-align: center;
+            padding: 0 20px;
         }
         
         /* Centered Skill Highlights Above Name */
         .skills-highlights {
             position: relative;
             width: 100%;
+            max-width: 800px;
             height: 150px;
-            margin-bottom: 2rem;
+            margin: 0 auto 2rem;
             z-index: 1;
         }
-        
+
         .highlight-container {
             position: relative;
             width: 100%;
@@ -359,6 +373,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: visible;
         }
         
         .hero-highlight {
@@ -386,47 +401,47 @@
         }
         
         /* Positioning highlights in a horizontal pattern above name */
-        .skill-1 { 
-            left: -200px;
+        .skill-1 {
+            left: 0;
             top: 50%;
             transform: translateY(-50%);
-            background: linear-gradient(45deg, #FF5722, #FF9800); 
+            background: linear-gradient(45deg, #FF5722, #FF9800);
             color: #fff;
             animation-delay: 0s;
         }
-        .skill-2 { 
-            left: -100px;
-            top: 20px;
-            background: linear-gradient(45deg, #FF9800, #FFC107); 
+        .skill-2 {
+            left: 15%;
+            top: 10px;
+            background: linear-gradient(45deg, #FF9800, #FFC107);
             color: #000;
             animation-delay: 2s;
         }
-        .skill-3 { 
-            right: -100px;
-            top: 20px;
-            background: linear-gradient(45deg, #FFC107, #4CAF50); 
+        .skill-3 {
+            right: 15%;
+            top: 10px;
+            background: linear-gradient(45deg, #FFC107, #4CAF50);
             color: #000;
             animation-delay: 4s;
         }
-        .skill-4 { 
-            right: -200px;
+        .skill-4 {
+            right: 0;
             top: 50%;
             transform: translateY(-50%);
-            background: linear-gradient(45deg, #2196F3, #3F51B5); 
+            background: linear-gradient(45deg, #2196F3, #3F51B5);
             color: #fff;
             animation-delay: 6s;
         }
-        .skill-5 { 
-            left: -50px;
-            bottom: 20px;
-            background: linear-gradient(45deg, #9C27B0, #E91E63); 
+        .skill-5 {
+            left: 20%;
+            bottom: 10px;
+            background: linear-gradient(45deg, #9C27B0, #E91E63);
             color: #fff;
             animation-delay: 8s;
         }
-        .skill-6 { 
-            right: -50px;
-            bottom: 20px;
-            background: linear-gradient(45deg, #00BCD4, #009688); 
+        .skill-6 {
+            right: 20%;
+            bottom: 10px;
+            background: linear-gradient(45deg, #00BCD4, #009688);
             color: #fff;
             animation-delay: 10s;
         }
@@ -670,6 +685,7 @@
         /* Education & Certifications Section */
         .education {
             background: linear-gradient(135deg, rgba(255, 87, 34, 0.05) 0%, rgba(25, 25, 35, 0.8) 100%);
+            overflow-x: hidden;
         }
 
         .education h2 {
@@ -679,18 +695,21 @@
 
         .education-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 100%;
         }
 
         .education-category {
             background: var(--card-bg);
             border-radius: 20px;
-            padding: 2.5rem;
+            padding: 2rem;
             border: 1px solid rgba(255, 193, 7, 0.2);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             animation: educationCardFloat 9s ease-in-out infinite;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .education-category:nth-child(even) {
@@ -721,29 +740,35 @@
         .education-item {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             border-left: 4px solid var(--secondary);
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
             animation: educationItemPulse 6s ease-in-out infinite;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .education-item:nth-child(odd) {
             animation-delay: -3s;
         }
 
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
         @keyframes educationItemPulse {
             0%, 100% { border-left-color: var(--secondary); }
-            50% { 
+            50% {
                 border-left-color: var(--primary);
                 box-shadow: -5px 0 20px rgba(255, 87, 34, 0.3);
             }
         }
 
         .education-item:hover {
-            transform: translateX(10px) scale(1.02);
+            transform: translateX(8px) scale(1.01);
             background: rgba(255, 255, 255, 0.08);
             box-shadow: 0 15px 35px rgba(255, 87, 34, 0.4);
         }
@@ -768,10 +793,12 @@
         }
 
         .education-item h4 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--tertiary);
             margin-bottom: 0.5rem;
             animation: itemTitleShimmer 5s ease-in-out infinite;
+            line-height: 1.3;
+            word-wrap: break-word;
         }
 
         @keyframes itemTitleShimmer {
@@ -802,6 +829,8 @@
         .education-description {
             color: rgba(255, 255, 255, 0.85);
             line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .certification-badge {
@@ -1352,8 +1381,53 @@
                 margin-bottom: 1.5rem;
             }
 
+            /* Hide desktop skill highlights on tablet, show simple version */
+            .hero-highlight {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .skill-1 {
+                left: 5%;
+            }
+
+            .skill-2 {
+                left: 18%;
+            }
+
+            .skill-3 {
+                right: 18%;
+            }
+
+            .skill-4 {
+                right: 5%;
+            }
+
+            .skill-5 {
+                left: 25%;
+            }
+
+            .skill-6 {
+                right: 25%;
+            }
+
+            /* Education responsive at tablet size */
             .education-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .education-category {
+                padding: 1.8rem;
+                max-width: 100%;
+            }
+
+            .education-category h3 {
+                font-size: 1.8rem;
+            }
+
+            .education-item {
+                padding: 1.3rem;
             }
 
             /* Show hamburger menu on tablet */
@@ -1375,6 +1449,7 @@
                 transition: right 0.3s ease;
                 border-left: 1px solid rgba(255, 152, 0, 0.3);
                 overflow-y: auto;
+                box-shadow: -5px 0 20px rgba(0, 0, 0, 0.5);
             }
 
             .nav-links.active {
@@ -1385,6 +1460,7 @@
                 padding: 1rem 2rem;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
                 width: 100%;
+                transition: all 0.3s ease;
             }
 
             .nav-links a::after {
@@ -1399,11 +1475,11 @@
         
         @media (max-width: 768px) {
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
 
             h2 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .projects-grid {
@@ -1415,26 +1491,73 @@
                 gap: 2rem;
             }
 
+            /* Simplify skill highlights on mobile - better stacking */
+            .skills-highlights {
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .highlight-container {
+                flex-wrap: wrap;
+                gap: 8px;
+                padding: 0 10px;
+            }
+
             .hero-highlight {
+                position: relative !important;
+                left: auto !important;
+                right: auto !important;
+                top: auto !important;
+                bottom: auto !important;
+                transform: none !important;
+                font-size: 0.8rem;
+                padding: 0.5rem 0.9rem;
+                margin: 0.3rem;
+                display: inline-flex;
+            }
+
+            .hero-highlight i {
                 font-size: 0.9rem;
-                padding: 0.6rem 1.2rem;
             }
 
             .welcome-message {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .education-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .education-category {
+                padding: 1.5rem;
+            }
+
+            .education-category h3 {
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
             }
 
             .education-item {
-                padding: 1.5rem;
+                padding: 1.2rem;
+            }
+
+            .education-item h4 {
+                font-size: 1.2rem;
+            }
+
+            .education-institution {
+                font-size: 1rem;
+            }
+
+            /* Disable hover transform on mobile to prevent overflow */
+            .education-item:hover {
+                transform: translateX(5px) scale(1);
             }
 
             /* Optimize hero section */
             .hero {
-                padding-top: 100px;
+                padding-top: 90px;
             }
 
             section {
@@ -1444,11 +1567,14 @@
             /* Optimize buttons for mobile */
             .button-group {
                 gap: 1rem;
+                flex-direction: column;
+                width: 100%;
             }
 
             .cta-button, .outline-button {
                 padding: 0.9rem 2rem;
                 font-size: 1rem;
+                width: 100%;
             }
 
             /* Back to top button smaller on mobile */
@@ -1543,6 +1669,47 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Education section full mobile optimization */
+            .education-grid {
+                gap: 1.2rem;
+            }
+
+            .education-category {
+                padding: 1.2rem;
+            }
+
+            .education-category h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .education-item {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .education-item h4 {
+                font-size: 1.1rem;
+            }
+
+            .education-institution {
+                font-size: 0.95rem;
+            }
+
+            .education-description {
+                font-size: 0.9rem;
+            }
+
+            .certification-badge {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            /* Completely disable hover effects on small screens */
+            .education-item:hover {
+                transform: none;
+            }
+
             /* Project images responsive */
             .project-img {
                 height: 200px;
@@ -1633,6 +1800,20 @@
                 opacity: 0.1 !important;
             }
 
+            /* Extra small optimization for education */
+            .education h2 {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .education-category h3 {
+                font-size: 1.3rem;
+            }
+
+            .education-item h4 {
+                font-size: 1rem;
+            }
+
             .back-to-top {
                 width: 45px;
                 height: 45px;
@@ -1708,13 +1889,24 @@
         .hamburger {
             display: none;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             gap: 5px;
             cursor: pointer;
             z-index: 1001;
             transition: all 0.3s ease;
+            padding: 8px;
+            background: rgba(255, 87, 34, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 87, 34, 0.3);
+        }
+
+        .hamburger:hover {
+            background: rgba(255, 87, 34, 0.2);
         }
 
         .hamburger span {
+            display: block;
             width: 28px;
             height: 3px;
             background: linear-gradient(45deg, var(--primary), var(--tertiary));
@@ -1728,10 +1920,11 @@
 
         .hamburger.active span:nth-child(2) {
             opacity: 0;
+            transform: translateX(20px);
         }
 
         .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
+            transform: rotate(-45deg) translate(8px, -8px);
         }
 
         /* ==============================================
