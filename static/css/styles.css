@@ -18,6 +18,10 @@
             box-sizing: border-box;
         }
         
+        html {
+            overflow-x: hidden;
+        }
+
         body {
             font-family: 'Exo 2', sans-serif;
             background-color: var(--background);
@@ -25,7 +29,9 @@
             line-height: 1.6;
             overflow-x: hidden;
             position: relative;
-            background: 
+            width: 100%;
+            max-width: 100vw;
+            background:
                 radial-gradient(circle at 10% 20%, rgba(255, 87, 34, 0.1) 0%, transparent 25%),
                 radial-gradient(circle at 90% 80%, rgba(255, 152, 0, 0.1) 0%, transparent 25%),
                 linear-gradient(135deg, #0c0c18 0%, #1a1a2e 100%);
@@ -236,6 +242,8 @@
         section {
             padding: 6rem 0;
             position: relative;
+            overflow-x: hidden;
+            width: 100%;
         }
         
         /* Navigation */
@@ -677,6 +685,7 @@
         /* Education & Certifications Section */
         .education {
             background: linear-gradient(135deg, rgba(255, 87, 34, 0.05) 0%, rgba(25, 25, 35, 0.8) 100%);
+            overflow-x: hidden;
         }
 
         .education h2 {
@@ -686,18 +695,21 @@
 
         .education-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 100%;
         }
 
         .education-category {
             background: var(--card-bg);
             border-radius: 20px;
-            padding: 2.5rem;
+            padding: 2rem;
             border: 1px solid rgba(255, 193, 7, 0.2);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
             animation: educationCardFloat 9s ease-in-out infinite;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .education-category:nth-child(even) {
@@ -728,29 +740,35 @@
         .education-item {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             border-left: 4px solid var(--secondary);
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
             animation: educationItemPulse 6s ease-in-out infinite;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .education-item:nth-child(odd) {
             animation-delay: -3s;
         }
 
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
         @keyframes educationItemPulse {
             0%, 100% { border-left-color: var(--secondary); }
-            50% { 
+            50% {
                 border-left-color: var(--primary);
                 box-shadow: -5px 0 20px rgba(255, 87, 34, 0.3);
             }
         }
 
         .education-item:hover {
-            transform: translateX(10px) scale(1.02);
+            transform: translateX(8px) scale(1.01);
             background: rgba(255, 255, 255, 0.08);
             box-shadow: 0 15px 35px rgba(255, 87, 34, 0.4);
         }
@@ -775,10 +793,12 @@
         }
 
         .education-item h4 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--tertiary);
             margin-bottom: 0.5rem;
             animation: itemTitleShimmer 5s ease-in-out infinite;
+            line-height: 1.3;
+            word-wrap: break-word;
         }
 
         @keyframes itemTitleShimmer {
@@ -809,6 +829,8 @@
         .education-description {
             color: rgba(255, 255, 255, 0.85);
             line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .certification-badge {
@@ -1389,8 +1411,23 @@
                 right: 25%;
             }
 
+            /* Education responsive at tablet size */
             .education-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .education-category {
+                padding: 1.8rem;
+                max-width: 100%;
+            }
+
+            .education-category h3 {
+                font-size: 1.8rem;
+            }
+
+            .education-item {
+                padding: 1.3rem;
             }
 
             /* Show hamburger menu on tablet */
@@ -1489,10 +1526,33 @@
 
             .education-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .education-category {
+                padding: 1.5rem;
+            }
+
+            .education-category h3 {
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
             }
 
             .education-item {
-                padding: 1.5rem;
+                padding: 1.2rem;
+            }
+
+            .education-item h4 {
+                font-size: 1.2rem;
+            }
+
+            .education-institution {
+                font-size: 1rem;
+            }
+
+            /* Disable hover transform on mobile to prevent overflow */
+            .education-item:hover {
+                transform: translateX(5px) scale(1);
             }
 
             /* Optimize hero section */
@@ -1609,6 +1669,47 @@
                 grid-template-columns: 1fr;
             }
 
+            /* Education section full mobile optimization */
+            .education-grid {
+                gap: 1.2rem;
+            }
+
+            .education-category {
+                padding: 1.2rem;
+            }
+
+            .education-category h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .education-item {
+                padding: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .education-item h4 {
+                font-size: 1.1rem;
+            }
+
+            .education-institution {
+                font-size: 0.95rem;
+            }
+
+            .education-description {
+                font-size: 0.9rem;
+            }
+
+            .certification-badge {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            /* Completely disable hover effects on small screens */
+            .education-item:hover {
+                transform: none;
+            }
+
             /* Project images responsive */
             .project-img {
                 height: 200px;
@@ -1697,6 +1798,20 @@
             .floating-skill-icon {
                 font-size: 2.5rem;
                 opacity: 0.1 !important;
+            }
+
+            /* Extra small optimization for education */
+            .education h2 {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .education-category h3 {
+                font-size: 1.3rem;
+            }
+
+            .education-item h4 {
+                font-size: 1rem;
             }
 
             .back-to-top {
