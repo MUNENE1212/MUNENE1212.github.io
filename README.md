@@ -1,126 +1,56 @@
-# Munene Denis - Personal Portfolio
+# munene1212.github.io
 
-A dynamic, cyberpunk-themed personal portfolio website showcasing projects, skills, and educational background. Built with pure HTML and CSS, featuring stunning animations and a fully responsive layout without any JavaScript dependencies.
+Client-facing portfolio for **Munene Denis, Founder & CTO of [Emen](https://ementech.co.ke)**.
+Live at <https://munene1212.github.io>.
 
-## 🚀 Features
+Static HTML, CSS and plain JavaScript. No build step, no framework, no tracking.
 
-- **Cyberpunk Aesthetic**: Modern, futuristic design with dark themes and vibrant neon colors
-- **Pure CSS Animations**: Dynamic effects for backgrounds, hero images, project cards, and interactive buttons
-- **Fully Responsive**: Seamlessly adapts to all screen sizes with CSS-only hamburger menu
-- **Static Site**: Lightning-fast performance, perfect for any static hosting service
-- **Zero JavaScript**: Built entirely with HTML5 and CSS3 for maximum compatibility
+## Edit content, not markup
 
-## 📁 Project Structure
+| To change… | Edit |
+| --- | --- |
+| Name, role, email, social links, headshot | `assets/data/profile.js` |
+| Case studies, screenshots and the project index | `assets/data/projects.js` |
+| Story, timeline, experience, education, skills | `assets/data/career.js` (About + Résumé) |
+| Page sections (services, process) | `index.html` |
+| Look and feel (colour tokens, light/dark) | `assets/css/site.css` |
 
-```
-.
-├── cv.pdf                    # Downloadable CV
-├── index.html               # Main landing page
-├── resume.html              # Resume page (optional)
-├── Dockerfile               # Docker configuration
-├── docker-compose.yml       # Docker Compose setup
-└── static/
-    ├── css/
-    │   └── styles.css       # Main stylesheet
-    ├── images/              # Image assets
-    │   └── [image files...]
-    └── videos/              # Video assets
-        └── [video files...]
-```
+A project with `featured: true` and a `story` becomes a case study; everything else
+appears under *More work*. Leave `repo` out for private work and the page shows
+"Private — demo on request".
 
-## 🌐 Live Demo
+`projects.js` is public. Never put credentials, server addresses or internal notes in it —
+those belong in the private `vault` repository.
 
-The portfolio is hosted on GitHub Pages:  
-**[View Live Portfolio](https://munene1212.github.io)**
+## Pages
 
-## 🐳 Getting Started with Docker
+- `index.html` — services, case studies, more work, process, contact form (opens the visitor's email app)
+- `about.html` — story, milestones, skills, education, principles
+- `resume.html` — printable résumé; *Print / save as PDF* produces a 2-page A4 CV from the same data
 
-Run the portfolio locally using Docker with a lightweight Nginx server.
+Content merged from the earlier multi-page portfolio (`plp-final-web-project`) in October 2026.
 
-### Prerequisites
+Screenshots live in `assets/img/work/` as ~1200px WebP. Never use screenshots that show
+real customers' names, messages or data.
 
-- Docker installed on your machine
-- Docker Compose (usually included with Docker)
+## Run locally
 
-### Quick Start
-
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd <your-repo-name>
-   ```
-
-2. **Build and run with Docker Compose**
-   ```bash
-   docker-compose up -d
-   ```
-
-3. **View the website**
-   Open your browser and navigate to [http://localhost:8080](http://localhost:8080)
-
-4. **Stop the container**
-   ```bash
-   docker-compose down
-   ```
-
-### Docker Configuration
-
-**Dockerfile**
-```dockerfile
-# Use a lightweight Nginx base image
-FROM nginx:alpine
-
-# Copy all project files into the Nginx web root
-COPY . /usr/share/nginx/html
-
-# Expose port 80
-EXPOSE 80
+```bash
+python3 -m http.server 8000      # then open http://localhost:8000
+# or
+docker compose up                # http://localhost:8080
 ```
 
-**docker-compose.yml**
-```yaml
-version: '3.8'
+## Layout
 
-services:
-  web:
-    build:
-      context: .
-    ports:
-      - "8080:80"
-    restart: unless-stopped
 ```
-
-## 🛠️ Technologies Used
-
-- **HTML5** - Semantic markup and structure
-- **CSS3** - Styling, animations, and responsive design
-- **Nginx** - Web server (via Docker)
-- **Docker** - Containerization and deployment
-
-## 📱 Responsive Design
-
-The portfolio is fully responsive and optimized for:
-- 📱 Mobile devices (320px and up)
-- 📱 Tablets (768px and up)
-- 💻 Desktop computers (1024px and up)
-- 🖥️ Large screens (1440px and up)
-
-## 🎨 Design Philosophy
-
-This portfolio embraces a cyberpunk aesthetic with:
-- Dark color schemes with neon accents
-- Smooth CSS animations and transitions
-- Modern typography and layout principles
-- Accessibility-first design approach
-
-## 📧 Contact
-
-**Munene Denis**
-- Portfolio: [https://munene1212.github.io]
-- Email: [mnent2025@gmail.com]
-- LinkedIn: [https://www.linkedin.com/in/munene-ndegwa-7167b718a/]
-- GitHub: [munene1212]
-
----
-
-⭐ **Star this repository if you found it helpful!**
+index.html  about.html  resume.html
+assets/
+  css/site.css        design tokens + layout (light and dark)
+  js/site.js          renders the data files into the page
+  data/profile.js     identity and contact (single source)
+  data/projects.js    public project catalogue
+  data/career.js      story, experience, education, skills
+  img/work/           product screenshots (WebP)
+  img/monogram.svg    MD mark (also the favicon)
+```
