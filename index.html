@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Munene Denis · Emen</title>
-  <meta name="description" content="Munene Denis, Founder & CTO of Emen, Nairobi. Software platforms, applied AI and connected hardware built for real conditions in Kenya." />
+  <meta name="description" content="Munene Denis, Founder & CTO of Emen Engineering Limited, Nairobi. Software platforms, applied AI and connected hardware built for real conditions in Kenya." />
   <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)" />
   <meta property="og:title" content="Munene Denis · Founder & CTO, Emen" />
   <meta property="og:description" content="Software platforms, applied AI and connected hardware built for real conditions in Kenya." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://munene1212.github.io/" />
+  <meta property="og:image" content="https://munene1212.github.io/assets/img/work/dumuwaks-landing.webp" />
   <link rel="icon" href="assets/img/monogram.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,15 +23,16 @@
 
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <a class="brand" href="#top" aria-label="Home">
+      <a class="brand" href="index.html" aria-label="Home">
         <img src="assets/img/monogram.svg" alt="" width="32" height="32" />
         <span>Munene Denis</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#process">Process</a>
-        <a href="#contact" class="nav-cta">Start a project</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Résumé</a>
+        <a href="index.html#contact" class="nav-cta">Start a project</a>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">◐</button>
       </nav>
     </div>
@@ -57,8 +59,9 @@
           <div class="portrait" id="portrait"></div>
           <dl class="facts">
             <div><dt>Live products</dt><dd id="count-live">–</dd></div>
+            <div><dt>Building since</dt><dd>2020</dd></div>
             <div><dt>Disciplines</dt><dd>Software · AI · Embedded</dd></div>
-            <div><dt>Based in</dt><dd>Nairobi, Kenya</dd></div>
+            <div><dt>Background</dt><dd>BSc EEE, JKUAT</dd></div>
           </dl>
         </aside>
       </div>
@@ -76,22 +79,41 @@
           <article class="service">
             <span class="service-tag">Emen Tech</span>
             <h3>Product engineering</h3>
-            <p>Web and mobile platforms, marketplaces, point of sale and multi-business systems — with M-Pesa, WhatsApp and offline use built in from day one.</p>
-            <ul><li>Customer apps &amp; PWAs</li><li>Business systems &amp; dashboards</li><li>Payments &amp; integrations</li></ul>
+            <p>Web and mobile platforms, marketplaces, online shops and business systems — with M-Pesa, WhatsApp and offline use built in from day one.</p>
+            <ul>
+              <li>Full-stack web apps &amp; PWAs</li>
+              <li>E-commerce, payments &amp; inventory</li>
+              <li>Business systems, automation &amp; integrations</li>
+            </ul>
           </article>
           <article class="service">
             <span class="service-tag">Applied AI</span>
             <h3>AI that earns its place</h3>
-            <p>Voice agents, generation and decision support added where they change an outcome, with fallbacks so the product still works when a model doesn't.</p>
-            <ul><li>Voice &amp; conversational flows</li><li>Satellite &amp; geospatial data</li><li>Evaluation before rollout</li></ul>
+            <p>Machine learning, voice agents, computer vision and generation, added where they change an outcome — with fallbacks so the product still works when a model doesn't.</p>
+            <ul>
+              <li>Predictive analytics &amp; data analysis</li>
+              <li>Voice, vision &amp; conversational flows</li>
+              <li>Satellite &amp; geospatial data</li>
+            </ul>
           </article>
           <article class="service">
             <span class="service-tag">Emen Lighting</span>
             <h3>Embedded &amp; IoT</h3>
-            <p>ESP32 firmware, LED signage and telemetry, designed to be configured rather than rewritten for each site, and updated safely over the air.</p>
-            <ul><li>LED signage &amp; displays</li><li>Sensors &amp; telemetry</li><li>Firmware with OTA rollback</li></ul>
+            <p>ESP32 firmware, LED signage, sensors and telemetry — configured rather than rewritten for each site, and updated safely over the air.</p>
+            <ul>
+              <li>LED signage &amp; displays</li>
+              <li>Sensor networks &amp; real-time monitoring</li>
+              <li>Hardware–software integration</li>
+            </ul>
           </article>
         </div>
+        <aside class="consult">
+          <div>
+            <h3>Technical consulting</h3>
+            <p>Architecture planning, code reviews, technology strategy and mentoring for teams that already build.</p>
+          </div>
+          <a class="btn btn-ghost" href="#contact">Book a call</a>
+        </aside>
       </div>
     </section>
 
@@ -119,17 +141,38 @@
       </div>
     </section>
 
+    <!-- About teaser -->
+    <section class="section" id="about">
+      <div class="wrap teaser">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>From circuits to code to company</h2>
+        </div>
+        <div>
+          <p class="section-lede">
+            An Electrical &amp; Electronic Engineer from JKUAT whose thesis put a camera and a
+            QR scanner on a front desk. That mix of hardware and software became
+            Emen Engineering Limited, founded in 2020 and now shipping live products.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-ghost" href="about.html">Read the story</a>
+            <a class="btn btn-ghost" href="resume.html">View résumé</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Process -->
-    <section class="section" id="process">
+    <section class="section section-alt" id="process">
       <div class="wrap">
         <header class="section-head">
           <p class="eyebrow">How we work</p>
           <h2>From the field to production</h2>
         </header>
         <ol class="steps">
-          <li><span class="step-no">01</span><h3>Understand the ground</h3><p>Who uses it, on what phone, on what network, paying how. Decisions start there, not with the stack.</p></li>
-          <li><span class="step-no">02</span><h3>Prototype the risky part</h3><p>A working slice of the hardest piece — a payment flow, a model, a device — before committing to the full build.</p></li>
-          <li><span class="step-no">03</span><h3>Build for production</h3><p>Tests, continuous deployment, monitoring and documentation, so the system can be run and handed over.</p></li>
+          <li><span class="step-no">01</span><h3>Understand the ground</h3><p>Who uses it, on what phone, on what network, paying how. We agree goals, constraints, milestones and a timeline.</p></li>
+          <li><span class="step-no">02</span><h3>Prototype the risky part</h3><p>Architecture and a working slice of the hardest piece — a payment flow, a model, a device — before committing to the full build.</p></li>
+          <li><span class="step-no">03</span><h3>Build and test</h3><p>Iterative delivery with regular demos, automated tests, continuous deployment and documentation.</p></li>
           <li><span class="step-no">04</span><h3>Operate and improve</h3><p>Hosting, support and iteration after launch, guided by how the product is actually used.</p></li>
         </ol>
       </div>
@@ -141,13 +184,29 @@
         <div>
           <p class="eyebrow">Work together</p>
           <h2>Have a problem worth solving?</h2>
-          <p class="section-lede">Tell me what you're trying to do, who it's for and when you need it.</p>
-        </div>
-        <div class="contact-actions">
-          <a class="btn btn-primary btn-lg" id="email-link" href="#">Email me</a>
-          <p class="email-text" id="email-text"></p>
+          <p class="section-lede">Tell me what you're trying to do, who it's for and when you need it. First consultation and estimate are free.</p>
           <ul class="socials" id="socials"></ul>
         </div>
+        <form class="contact-form" id="contact-form">
+          <label>Your name
+            <input name="name" type="text" autocomplete="name" />
+          </label>
+          <label>What do you need?
+            <select name="topic">
+              <option>New product or platform</option>
+              <option>E-commerce or payments</option>
+              <option>AI feature</option>
+              <option>LED signage or IoT</option>
+              <option>Technical consulting</option>
+              <option>Something else</option>
+            </select>
+          </label>
+          <label>Message
+            <textarea name="message" rows="4" required placeholder="The problem, who it's for, and your timeline"></textarea>
+          </label>
+          <button class="btn btn-primary btn-lg" type="submit">Open in my email</button>
+          <p class="form-note">Opens your email app addressed to <a data-email href="#"><span id="email-text"></span></a>. Nothing is stored on this site.</p>
+        </form>
       </div>
     </section>
   </main>

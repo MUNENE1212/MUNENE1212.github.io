@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Résumé · Munene Denis</title>
+  <meta name="description" content="Résumé of Munene Denis, Founder & CTO of Emen Engineering Limited: experience, projects, skills and education." />
+  <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)" />
+  <meta property="og:title" content="Munene Denis · Founder & CTO, Emen" />
+  <meta property="og:description" content="Software platforms, applied AI and connected hardware built for real conditions in Kenya." />
+  <meta property="og:type" content="website" />
+  
+  <meta property="og:image" content="https://munene1212.github.io/assets/img/work/dumuwaks-landing.webp" />
+  <link rel="icon" href="assets/img/monogram.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img src="assets/img/monogram.svg" alt="" width="32" height="32" />
+        <span>Munene Denis</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#work">Work</a>
+        <a href="about.html">About</a>
+        <a href="resume.html">Résumé</a>
+        <a href="index.html#contact" class="nav-cta">Start a project</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">◐</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero page-hero-cv no-print">
+      <div class="wrap cv-toolbar">
+        <div>
+          <p class="eyebrow">Résumé</p>
+          <h1>Munene Denis</h1>
+        </div>
+        <button class="btn btn-primary" id="print-cv" type="button">Print / save as PDF</button>
+      </div>
+    </section>
+
+    <article class="wrap cv">
+      <header class="cv-head">
+        <div>
+          <h1 class="print-only">Munene Denis</h1>
+          <p class="cv-role">Founder &amp; CTO, <span id="legal-name"></span> · Nairobi, Kenya</p>
+        </div>
+        <p class="cv-contact">
+          <a data-email href="#"><span id="email-text"></span></a> ·
+          munene1212.github.io · ementech.co.ke · github.com/MUNENE1212
+        </p>
+      </header>
+
+      <section class="cv-section">
+        <h2>Summary</h2>
+        <p>Electrical &amp; Electronic Engineer and founder of Emen Engineering Limited (since <span id="founded"></span>).
+          I build and run production software, applied AI and embedded systems for Kenyan businesses —
+          from M-Pesa-integrated marketplaces and online shops to voice-driven drought intelligence and
+          ESP32 LED-signage firmware with over-the-air updates.</p>
+      </section>
+
+      <section class="cv-section">
+        <h2>Experience</h2>
+        <div class="cv-list" id="experience"></div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Selected projects</h2>
+        <div class="cv-list" id="cv-projects"></div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Skills</h2>
+        <div class="skills skills-compact" id="skills"></div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Education &amp; certifications</h2>
+        <div class="cv-list" id="education"></div>
+      </section>
+
+      <section class="cv-section">
+        <h2>Languages</h2>
+        <p id="languages"></p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Munene Denis · <a id="company-link" href="#">Emen</a></p>
+      <p class="muted">Static site · no tracking</p>
+    </div>
+  </footer>
+
+  <script src="assets/data/profile.js"></script>
+  <script src="assets/data/projects.js"></script>
+  <script src="assets/data/career.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

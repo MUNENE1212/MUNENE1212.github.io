@@ -15,9 +15,52 @@
      repo      public repository link (optional; leave out for private work)
      featured  true to show as a case study
      story     for featured items: { problem, approach, result }
+     metric    optional headline number, e.g. "30+ active users"
+     images    optional screenshots: [{ src, alt }] (WebP, ~1200px wide,
+               never showing real customers' names or data)
 */
 
 const PROJECTS = [
+  {
+    id: "dumuwaks",
+    name: "Dumu Waks",
+    division: "tech",
+    status: "live",
+    featured: true,
+    summary: "A maintenance and repair marketplace for Kenya: technician matching, booking, real-time chat and M-Pesa payments.",
+    stack: ["TypeScript", "React", "Node.js", "MongoDB", "Socket.IO", "M-Pesa"],
+    url: "https://dumuwaks.ementech.co.ke",
+    repo: "https://github.com/MUNENE1212/dumuwaks",
+    metric: "30+ active users",
+    images: [
+      { src: "assets/img/work/dumuwaks-landing.webp", alt: "Dumu Waks landing page: search for maintenance and repair services" },
+      { src: "assets/img/work/dumuwaks-dashboard.webp", alt: "Dumu Waks customer dashboard with bookings and quick actions" }
+    ],
+    story: {
+      problem: "Finding a trusted technician is word-of-mouth, and paying one safely is awkward for both sides.",
+      approach: "Matching on location, skills and availability; booking with a fee held in escrow; real-time messaging; M-Pesa STK push and payouts; dashboards for clients, technicians, support and admins.",
+      result: "Live in production with continuous deployment on every merge."
+    }
+  },
+  {
+    id: "emen-shop",
+    name: "Emen Shop",
+    division: "tech",
+    status: "live",
+    featured: true,
+    summary: "An electronics store and installation-services business online: catalogue, cart, orders, accounts, WhatsApp checkout and admin analytics.",
+    stack: ["Next.js", "TypeScript", "MongoDB", "WhatsApp"],
+    url: "https://baitech.co.ke",
+    images: [
+      { src: "assets/img/work/emen-shop-landing.webp", alt: "Emen Shop home page with search and today's offers" },
+      { src: "assets/img/work/emen-shop-catalogue.webp", alt: "Emen Shop product catalogue filtered by category" }
+    ],
+    story: {
+      problem: "A shop selling electronics and installation services needed to sell online without asking customers to trust an unfamiliar card checkout.",
+      approach: "Server-rendered storefront for search visibility, products and services in one catalogue, checkout that continues on WhatsApp, and an admin dashboard for orders and analytics.",
+      result: "Live at baitech.co.ke (formerly BaiTech), running on Emen-managed infrastructure."
+    }
+  },
   {
     id: "ardalink",
     name: "ArdaLink",
@@ -31,22 +74,6 @@ const PROJECTS = [
       problem: "Herders decide where to move livestock with little warning of pasture and water loss, and most are reached by voice, not apps.",
       approach: "An engine scores vegetation (NDVI) and plans livestock journeys; an API turns that into voice calls over Africa's Talking; an operator dashboard captures ground truth.",
       result: "Three open repositories — engine, API and web — that work as one system and can be deployed independently."
-    }
-  },
-  {
-    id: "dumuwaks",
-    name: "Dumu Waks",
-    division: "tech",
-    status: "live",
-    featured: true,
-    summary: "A maintenance and repair marketplace for Kenya: technician matching, booking, real-time chat and M-Pesa payments.",
-    stack: ["TypeScript", "React", "Node.js", "MongoDB", "Socket.IO", "M-Pesa"],
-    url: "https://dumuwaks.ementech.co.ke",
-    repo: "https://github.com/MUNENE1212/dumuwaks",
-    story: {
-      problem: "Finding a trusted technician is word-of-mouth, and paying one safely is awkward for both sides.",
-      approach: "Matching across service categories, booking with a booking fee held in escrow, real-time messaging and M-Pesa STK push and payouts.",
-      result: "Live in production with continuous deployment on every merge."
     }
   },
   {
@@ -99,7 +126,6 @@ const PROJECTS = [
     name: "Lectern",
     division: "ai",
     status: "live",
-    featured: true,
     summary: "Turns any PDF, ebook or article into a chaptered audiobook, entirely offline.",
     stack: ["Python", "Piper TTS", "PyMuPDF"],
     repo: "https://github.com/MUNENE1212/lectern",
@@ -112,6 +138,51 @@ const PROJECTS = [
 
   /* ---- Further work (shown in the index, not as case studies) ---- */
   {
+    id: "ementech",
+    name: "Emen company website",
+    division: "tech",
+    status: "live",
+    summary: "Company site for Emen Engineering Limited with product showcase, lead capture, quote requests, integrated email and an AI chat assistant.",
+    stack: ["React", "TypeScript", "Vite", "Node.js", "Tailwind"],
+    url: "https://ementech.co.ke",
+    images: [
+      { src: "assets/img/work/ementech-landing.webp", alt: "Emen company website hero: We Build For Africa" }
+    ]
+  },
+  {
+    id: "smartbiz",
+    name: "SmartBiz",
+    division: "tech",
+    status: "building",
+    summary: "Business suite for Kenyan SMEs: inventory, point of sale, suppliers, payroll, sales analytics and M-Pesa.",
+    stack: ["FastAPI", "Python", "MongoDB"],
+    images: [
+      { src: "assets/img/work/smartbiz-dashboard.webp", alt: "SmartBiz dashboard with daily sales trend and payment methods" }
+    ]
+  },
+  {
+    id: "greenrent",
+    name: "GreenRent",
+    division: "tech",
+    status: "building",
+    summary: "Housing access for every income level: flexible rent plans, daily micro-savings and virtual viewings.",
+    stack: ["Node.js", "Next.js", "MongoDB", "IntaSend"],
+    images: [
+      { src: "assets/img/work/greenrent-landing.webp", alt: "GreenRent landing page" }
+    ]
+  },
+  {
+    id: "intelligent-receptionist",
+    name: "Intelligent Receptionist",
+    division: "ai",
+    status: "research",
+    summary: "BSc thesis at JKUAT: automated visitor check-in using Haar Cascade face detection and QR-code appointment booking.",
+    stack: ["Python", "OpenCV", "QR codes"],
+    images: [
+      { src: "assets/img/work/intelligent-receptionist.webp", alt: "Intelligent Receptionist thesis project title card" }
+    ]
+  },
+  {
     id: "tomtin",
     name: "TomTin ERP",
     division: "tech",
@@ -119,15 +190,7 @@ const PROJECTS = [
     summary: "Offline-first point of sale and business intelligence for owners running several small businesses — water, laundry, retail, LPG.",
     stack: ["React", "Django", "PostgreSQL", "PWA"]
   },
-  {
-    id: "emen-shop",
-    name: "Emen Shop storefront",
-    division: "tech",
-    status: "live",
-    summary: "Online storefront with catalogue, cart, orders, accounts, WhatsApp checkout and admin analytics.",
-    stack: ["Next.js", "TypeScript", "MongoDB"],
-    url: "https://baitech.co.ke"
-  },
+
   {
     id: "kuku",
     name: "Kuku Savings Group",
