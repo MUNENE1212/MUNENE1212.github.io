@@ -29,7 +29,6 @@ const CAREER = {
     { year: "2026", title: "Emen Lighting and Applied AI", text: "Launched KEROMA and Lectern; began ArdaLink drought intelligence and the Emen Signage firmware platform." },
     { year: "2025", title: "DumuWaks and the Emen Shop go live", text: "Two-sided technician marketplace and e-commerce storefront launched to real customers." },
     { year: "2025", title: "Data science, AI and software engineering certifications", text: "KIEP-SKIES (Data Science & AI) and Power Learn Project (Software Engineering)." },
-    { year: "2024", title: "Kenya Broadcasting Corporation", text: "Signal system design, testing and fault analysis." },
     { year: "2023", title: "Graduated from JKUAT", text: "BSc Electrical & Electronic Engineering. Thesis: Intelligent Receptionist." },
     { year: "2020", title: "Founded Emen Engineering Limited", text: "A technology company building software and hardware for Kenyan businesses." }
   ],
@@ -44,15 +43,6 @@ const CAREER = {
         "Built and launched DumuWaks (technician marketplace, 30+ active users) and the Emen Shop storefront.",
         "Shipped KEROMA and Lectern; leading development of ArdaLink drought intelligence and the Emen Signage ESP32 firmware.",
         "Run the production VPS estate: containers, reverse proxy, CI/CD and monitoring."
-      ]
-    },
-    {
-      role: "Signal Systems",  // confirm exact job title
-      org: "Kenya Broadcasting Corporation",
-      period: "Jan – Dec 2024",
-      points: [
-        "Assisted in signal system design and testing for clients.",
-        "Carried out fault analysis and troubleshooting on signal-processing systems."
       ]
     },
     {
