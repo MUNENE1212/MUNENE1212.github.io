@@ -1,474 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Munene Denis | Futuristic Portfolio</title>
-    <!-- Google Fonts: Orbitron for headings, Rajdhani for body text -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- MY Stylesheet-->
-    <link rel="stylesheet" href="static/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Munene Denis · Emen</title>
+  <meta name="description" content="Munene Denis, Founder & CTO of Emen, Nairobi. Software platforms, applied AI and connected hardware built for real conditions in Kenya." />
+  <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)" />
+  <meta property="og:title" content="Munene Denis · Founder & CTO, Emen" />
+  <meta property="og:description" content="Software platforms, applied AI and connected hardware built for real conditions in Kenya." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://munene1212.github.io/" />
+  <link rel="icon" href="assets/img/monogram.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
 </head>
 <body>
-    <!-- Global Floating Skill Icons -->
-    <div class="global-skill-icons">
-        <i class="fab fa-python floating-skill-icon python" style="left: 10%; top: 20%;"></i>
-        <i class="fas fa-database floating-skill-icon database" style="left: 85%; top: 30%;"></i>
-        <i class="fab fa-docker floating-skill-icon docker" style="left: 20%; top: 70%;"></i>
-        <i class="fas fa-brain floating-skill-icon ai" style="left: 80%; top: 80%;"></i>
-        <i class="fas fa-microchip floating-skill-icon electronics" style="left: 15%; top: 50%;"></i>
-        <i class="fas fa-chart-line floating-skill-icon chart" style="left: 75%; top: 15%;"></i>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <img src="assets/img/monogram.svg" alt="" width="32" height="32" />
+        <span>Munene Denis</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#contact" class="nav-cta">Start a project</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">◐</button>
+      </nav>
     </div>
+  </header>
 
-    <!-- Welcome Message - Pure CSS animation -->
-    <div class="welcome-message">
-        Welcome to My Digital Universe
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow" id="role-location"></p>
+          <h1>Software, AI and hardware that work <em>where your customers are.</em></h1>
+          <p class="lede">
+            I lead engineering at Emen. We design and build platforms, AI features and
+            connected devices for Kenyan businesses — built for mobile phones, M-Pesa,
+            patchy networks and real installations in the field.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Discuss a project</a>
+            <a class="btn btn-ghost" href="#work">See the work</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="At a glance">
+          <div class="portrait" id="portrait"></div>
+          <dl class="facts">
+            <div><dt>Live products</dt><dd id="count-live">–</dd></div>
+            <div><dt>Disciplines</dt><dd>Software · AI · Embedded</dd></div>
+            <div><dt>Based in</dt><dd>Nairobi, Kenya</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">What I do</p>
+          <h2>Three disciplines, one team</h2>
+          <p class="section-lede">Most projects need more than one. Having them under one roof means the app, the model and the device are designed together.</p>
+        </header>
+        <div class="services">
+          <article class="service">
+            <span class="service-tag">Emen Tech</span>
+            <h3>Product engineering</h3>
+            <p>Web and mobile platforms, marketplaces, point of sale and multi-business systems — with M-Pesa, WhatsApp and offline use built in from day one.</p>
+            <ul><li>Customer apps &amp; PWAs</li><li>Business systems &amp; dashboards</li><li>Payments &amp; integrations</li></ul>
+          </article>
+          <article class="service">
+            <span class="service-tag">Applied AI</span>
+            <h3>AI that earns its place</h3>
+            <p>Voice agents, generation and decision support added where they change an outcome, with fallbacks so the product still works when a model doesn't.</p>
+            <ul><li>Voice &amp; conversational flows</li><li>Satellite &amp; geospatial data</li><li>Evaluation before rollout</li></ul>
+          </article>
+          <article class="service">
+            <span class="service-tag">Emen Lighting</span>
+            <h3>Embedded &amp; IoT</h3>
+            <p>ESP32 firmware, LED signage and telemetry, designed to be configured rather than rewritten for each site, and updated safely over the air.</p>
+            <ul><li>LED signage &amp; displays</li><li>Sensors &amp; telemetry</li><li>Firmware with OTA rollback</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case studies -->
+    <section class="section section-alt" id="work">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">Selected work</p>
+          <h2>Case studies</h2>
+          <p class="section-lede">The problem, what was built, and where it stands today.</p>
+        </header>
+        <div class="cases" id="cases"></div>
+
+        <header class="section-head section-head-sub">
+          <h3>More work</h3>
+          <div class="filters" id="filters" role="group" aria-label="Filter projects">
+            <button class="chip is-active" data-filter="all" type="button">All</button>
+            <button class="chip" data-filter="tech" type="button">Emen Tech</button>
+            <button class="chip" data-filter="ai" type="button">Applied AI</button>
+            <button class="chip" data-filter="lighting" type="button">Emen Lighting</button>
+          </div>
+        </header>
+        <div class="index" id="index"></div>
+        <p class="note">Some client and product repositories are private. Happy to walk through them on a call.</p>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section" id="process">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">How we work</p>
+          <h2>From the field to production</h2>
+        </header>
+        <ol class="steps">
+          <li><span class="step-no">01</span><h3>Understand the ground</h3><p>Who uses it, on what phone, on what network, paying how. Decisions start there, not with the stack.</p></li>
+          <li><span class="step-no">02</span><h3>Prototype the risky part</h3><p>A working slice of the hardest piece — a payment flow, a model, a device — before committing to the full build.</p></li>
+          <li><span class="step-no">03</span><h3>Build for production</h3><p>Tests, continuous deployment, monitoring and documentation, so the system can be run and handed over.</p></li>
+          <li><span class="step-no">04</span><h3>Operate and improve</h3><p>Hosting, support and iteration after launch, guided by how the product is actually used.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="wrap contact-inner">
+        <div>
+          <p class="eyebrow">Work together</p>
+          <h2>Have a problem worth solving?</h2>
+          <p class="section-lede">Tell me what you're trying to do, who it's for and when you need it.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary btn-lg" id="email-link" href="#">Email me</a>
+          <p class="email-text" id="email-text"></p>
+          <ul class="socials" id="socials"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Munene Denis · <a id="company-link" href="#">Emen</a></p>
+      <p class="muted">Static site · no tracking</p>
     </div>
+  </footer>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <div class="logo">M<span>D</span></div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="nav-links">
-                <a href="#home" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#education">Education</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Enhanced Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <!-- Centered Skill Highlights Above Name -->
-                <div class="skills-highlights">
-                    <div class="highlight-container">
-                        <div class="hero-highlight skill-1">
-                            <i class="fab fa-python"></i> Python Developer
-                        </div>
-                        <div class="hero-highlight skill-2">
-                            <i class="fas fa-database"></i> MongoDB Expert
-                        </div>
-                        <div class="hero-highlight skill-3">
-                            <i class="fab fa-docker"></i> Containerization
-                        </div>
-                        <div class="hero-highlight skill-4">
-                            <i class="fas fa-brain"></i> AI & Data Science
-                        </div>
-                        <div class="hero-highlight skill-5">
-                            <i class="fas fa-microchip"></i> Electronics
-                        </div>
-                        <div class="hero-highlight skill-6">
-                            <i class="fas fa-chart-line"></i> Tech Entrepreneurship
-                        </div>
-                    </div>
-                </div>
-
-                <h1 class="hero-name">Munene Denis</h1>
-                <p class="hero-subtitle">Electrical & Electronic | Software | AI Engineer</p>
-                
-                <div class="button-group">
-                    <a href="#projects" class="cta-button">View My Projects</a>
-                    <a href="#contact" class="outline-button">Get In Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="about-container">
-                <div class="about-content">
-                    <h2>About Me</h2>
-                    <p>Hello! I'm Munene Denis, a graduate Electrical and Electronic Engineer with a passion for artificial intelligence and data science. My journey in tech combines hardware knowledge with cutting-edge software expertise.</p>
-                    <p>As a backend engineer, I specialize in Python, JavaScript, MongoDB, and containerization technologies like Docker. I build robust, scalable systems that power modern applications.</p>
-                    <p>Beyond technology, I'm an entrepreneur managing businesses in accessories, electricals, and electronics. I thrive in collaborative environments and have pioneered youth groups focused on community development.</p>
-                    
-                    <a href="cv.pdf" class="cta-button" style="margin-top: 2rem;" target="_blank">
-                        <i class="fas fa-download"></i>CV
-                    </a>
-                </div>
-                
-                <div class="about-img">
-                    <div class="hexagon">
-                        <img src="static/images/munene.jpg" alt="Munene Denis">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education & Certifications Section -->
-    <section id="education" class="education">
-        <div class="container">
-            <h2>Education & Certifications</h2>
-            <div class="education-grid">
-                <!-- Formal Education -->
-                <div class="education-category">
-                    <h3><i class="fas fa-graduation-cap"></i> Formal Education</h3>
-                    
-                    <div class="education-item">
-                        <h4>Bachelor of Science in Electrical & Electronic Engineering</h4>
-                        <div class="education-institution">Jomo Kenyatta University of Agriculture and Technology (JKUAT)</div>
-                        <div class="education-date">2017 - 2022</div>
-                        <div class="education-description">
-                            Comprehensive study of electrical systems, electronics, power engineering, and control systems. 
-                            Specialized coursework in digital systems, microprocessors, and renewable energy systems. 
-                            Completed final year project on an AI receptionist.
-                        </div>
-                        <div class="certification-badge">
-                            <i class="fas fa-medal"></i> Second Class Honors
-                        </div>
-                    </div>
-
-                    <div class="education-item">
-                        <h4>Kenya Certificate of Secondary Education (KCSE)</h4>
-                        <div class="education-institution">Burieruri Boys</div>
-                        <div class="education-date">2011 - 2014</div>
-                        <div class="education-description">
-                            Strong foundation in Mathematics, Physics, Chemistry, and English. 
-                            Excelled in STEM subjects with particular strength in Mathematics and Physics.
-                        </div>
-                        <div class="certification-badge">
-                            <i class="fas fa-star"></i> Grade B+
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Professional Certifications -->
-                <div class="education-category">
-                    <h3><i class="fas fa-certificate"></i> Professional Certifications</h3>
-                    
-                    <div class="education-item">
-                        <h4>Data Science & Artificial Intelligence Certification</h4>
-                        <div class="education-institution">KIEP-SKIES (Kenya Industry and Entrepreneurship Project)</div>
-                        <div class="education-date">2025</div>
-                        <div class="education-description">
-                            Intensive program covering machine learning algorithms, data analysis, statistical modeling, 
-                            and AI implementation. Hands-on experience with Python libraries including Pandas, NumPy, 
-                            Scikit-learn, and TensorFlow. Completed capstone project on predictive analytics.
-                        </div>
-                        <div class="certification-badge">
-                            <i class="fas fa-brain"></i> AI Specialist
-                        </div>
-                    </div>
-
-                    <div class="education-item">
-                        <h4>Python Programming Specialist</h4>
-                        <div class="education-institution">Self-Directed Learning & Professional Development</div>
-                        <div class="education-date">2022 - Present</div>
-                        <div class="education-description">
-                            Advanced proficiency in Python development including web frameworks (FastAPI, Jinja2), 
-                            database integration (MongoDB, SQL), and automation scripting. 
-                            Specialized in backend development and API design.
-                        </div>
-                        <div class="certification-badge">
-                            <i class="fab fa-python"></i> Python Expert
-                        </div>
-                    </div>
-
-                    <div class="education-item">
-                        <h4>Entrepreneurship & Business Development</h4>
-                        <div class="education-institution">Practical Business Experience</div>
-                        <div class="education-date">2020 - Present</div>
-                        <div class="education-description">
-                            Active management of businesses in electronics, accessories, and electrical supplies. 
-                            Developed skills in inventory management, customer relations, financial planning, 
-                            and market analysis. Leadership experience in youth community development groups.
-                        </div>
-                        <div class="certification-badge">
-                            <i class="fas fa-business-time"></i> Business Leader
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2>Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python Development</h3>
-                    <p>Backend systems, data analysis, and automation scripting with Python frameworks including FastAPI and Django.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Database Systems</h3>
-                    <p>Expertise in MongoDB, SQL databases, and data modeling for scalable applications.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fab fa-docker"></i>
-                    </div>
-                    <h3>Containerization</h3>
-                    <p>Docker deployment, container orchestration, and cloud-native application development.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>AI & Data Science</h3>
-                    <p>Machine learning model development, data analysis, and predictive analytics solutions.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>Electronics</h3>
-                    <p>Hardware design, circuit analysis, and electronic systems integration.</p>
-                </div>
-                
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Entrepreneurship</h3>
-                    <p>Business development in electronics and accessories with a focus on tech-driven solutions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section with Slideshows -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Liquor Store Management -->
-                <div class="project-card">
-                    <div class="project-img">
-                        <div class="slideshow-container">
-                            <div class="slideshow">
-                                <div class="slide">
-                                    <img src="static/images/liq_adm.png" alt="Liquor Store Dashboard">
-                                    <div class="slide-content">Dashboard View</div>
-                                </div>
-                                <div class="slide">
-                                    <img src="static/images/liq_op.png" alt="Liquor Store Inventory">
-                                    <div class="slide-content">Inventory Management</div>
-                                </div>
-                                <div class="slide">
-                                    <video autoplay muted loop>
-                                        <source src="static/videos/liquor.webm" type="video/webm">
-                                    </video>
-                                    <div class="slide-content">System Demo</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Liquor Store Management System</h3>
-                        <p>Full-featured inventory and sales management platform with real-time analytics and reporting capabilities.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/MUNENE1212/Liquor_" class="project-link">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                            <a href="#liquor-demo" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- E-Commerce Platform -->
-                <div class="project-card">
-                    <div class="project-img">
-                        <div class="slideshow-container">
-                            <div class="slideshow">
-                                <div class="slide">
-                                    <img src="static/images/baitek_home.png" alt="E-Commerce Home">
-                                    <div class="slide-content">Home Page</div>
-                                </div>
-                                <div class="slide">
-                                    <img src="static/images/featured_products.png" alt="E-Commerce Product">
-                                    <div class="slide-content">Product Page</div>
-                                </div>
-                                <div class="slide">
-                                    <video autoplay muted loop>
-                                        <source src="static/videos/baitek.webm" type="video/webm">
-                                    </video>
-                                    <div class="slide-content">Checkout Demo</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Electronics E-Commerce Platform</h3>
-                        <p>Complete online shopping experience with payment integration, inventory management, and customer analytics.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/MUNENE1212/Baitech_website" class="project-link">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                            <a href="#baitek-demo" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Retail Shop Management -->
-                <div class="project-card">
-                    <div class="project-img">
-                        <div class="slideshow-container">
-                            <div class="slideshow">
-                                <div class="slide">
-                                    <img src="static/images/retail_mgr.png" alt="Retail Dashboard">
-                                    <div class="slide-content">Dashboard View</div>
-                                </div>
-                                <div class="slide">
-                                    <img src="static/images/retail_sup.png" alt="inventory management">
-                                    <div class="slide-content">Analytics Page</div>
-                                </div>
-                                <div class="slide">
-                                    <video autoplay muted loop>
-                                        <source src="static/videos/Smart_biz.webm" type="video/mp4">
-                                    </video>
-                                    <div class="slide-content">POS Demo</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Retail Shop Management Suite</h3>
-                        <p>Comprehensive solution for retail operations including POS, inventory tracking, and sales forecasting.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/MUNENE1212/Smartbiz" class="project-link">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                            <a href="#retail-demo" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Live Demo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h2>Let's Connect</h2>
-                    <p>I'm always open to discussing new projects, collaboration opportunities, or just chatting about technology and innovation.</p>
-                    <p>Feel free to reach out through the contact form or connect with me on social media.</p>
-                    
-                    <div class="social-links">
-                        <a href="mailto:mnent@gmail.com" class="social-link">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/munene-ndegwa-7167b718a/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://x.com/MunE_nE" target="_blank" class="social-link">
-                            <i class="fab fa-x"></i>
-                        </a>
-                        <a href="https://github.com/MUNENE1212" target="_blank" class="social-link">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form action="mailto:mnent2025@gmail.com" method="post" enctype="text/plain">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-control" placeholder="What is this regarding?" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Your message here..." required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">Munene Denis</div>
-                <p>Electrical & Electronic | Software | AI Engineer</p>
-                
-                <div class="footer-links">
-                    <a href="#home" class="footer-link">Home</a>
-                    <a href="#about" class="footer-link">About</a>
-                    <a href="#education" class="footer-link">Education</a>
-                    <a href="#skills" class="footer-link">Skills</a>
-                    <a href="#projects" class="footer-link">Projects</a>
-                    <a href="#contact" class="footer-link">Contact</a>
-                </div>
-                
-                <p class="copyright">© 2025 Munene Denis. Built for PLP Academy Hackathon Challenge.</p>
-            </div>
-        </div>
-    </footer>
-    <!-- Video Modals -->
-    <div id="liquor-demo" class="video-modal">
-        <div class="modal-content">
-            <a href="#projects" class="close-modal">&times;</a>
-            <video controls autoplay>
-                <source src="static/videos/liquor.webm" type="video/webm">
-            </video>
-        </div>
-    </div>
-
-    <div id="baitek-demo" class="video-modal">
-        <div class="modal-content">
-            <a href="#projects" class="close-modal">&times;</a>
-            <video controls autoplay>
-                <source src="static/videos/baitek.webm" type="video/webm">
-            </video>
-        </div>
-    </div>
-
-    <div id="retail-demo" class="video-modal">
-        <div class="modal-content">
-            <a href="#projects" class="close-modal">&times;</a>
-            <video controls autoplay>
-                <source src="static/videos/Smart_biz.webm" type="video/webm">
-            </video>
-        </div>
-    </div>
-
-    <!-- Modern JavaScript Features -->
-    <script src="static/js/main.js"></script>
+  <script src="assets/data/profile.js"></script>
+  <script src="assets/data/projects.js"></script>
+  <script src="assets/js/site.js"></script>
 </body>
 </html>
