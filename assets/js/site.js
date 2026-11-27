@@ -45,6 +45,10 @@
     el.href = "mailto:" + PROFILE.email;
   });
 
+  document.querySelectorAll("[data-email-subject]").forEach(function (el) {
+    el.href = "mailto:" + PROFILE.email + "?subject=" + encodeURIComponent(el.dataset.emailSubject);
+  });
+
   const companyLink = byId("company-link");
   if (companyLink) {
     companyLink.href = PROFILE.company.url;
@@ -264,6 +268,102 @@
         );
       }).join(""));
     }
+  }
+
+  // ---------- live DumuWaks traction (elements with data-traction="path.to.value") ----------
+
+  const tractionTargets = document.querySelectorAll("[data-traction]");
+  if (tractionTargets.length && PROFILE.tractionUrl) {
+    loadTraction();
+  }
+
+  // Read "a.b.c" from an object; undefined when any step is missing.
+  function pick(obj, path) {
+    return path.split(".").reduce(function (value, key) {
+      return value === undefined || value === null ? undefined : value[key];
+    }, obj);
+  }
+
+  function formatTraction(value, kind) {
+    if (value === undefined || value === null) return "—";
+    if (kind === "percent") return Math.round(value * 100) + "%";
+    return String(value);
+  }
+
+  function loadTraction() {
+    fetch(PROFILE.tractionUrl, { headers: { Accept: "application/json" } })
+      .then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      })
+      .then(function (body) {
+        const data = body && body.data;
+        if (!data) throw new Error("no data");
+        tractionTargets.forEach(function (el) {
+          el.textContent = formatTraction(pick(data, el.dataset.traction), el.dataset.format);
+        });
+        document.querySelectorAll("[data-traction-goal]").forEach(function (el) {
+          const value = Number(pick(data, el.dataset.tractionGoal)) || 0;
+          const goal = Number(el.dataset.goal) || 1;
+          el.style.width = Math.min(100, Math.round((value / goal) * 100)) + "%";
+        });
+        document.querySelectorAll("[data-traction-asof]").forEach(function (el) {
+          el.textContent = "Live from dumuwaks.co.ke · " + new Date(data.asOf).toLocaleString("en-KE", {
+            day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit"
+          });
+        });
+        renderWeeklyJobs(data.completedJobs && data.completedJobs.perWeek);
+      })
+      .catch(function () {
+        // Endpoint not deployed yet or offline: say so rather than show zeros.
+        tractionTargets.forEach(function (el) { el.textContent = "—"; });
+        document.querySelectorAll("[data-traction-asof]").forEach(function (el) {
+          el.textContent = "Live figures appear here once the DumuWaks traction endpoint is live.";
+        });
+      });
+  }
+
+  // Small bar chart of completed jobs per week (building.html).
+  function renderWeeklyJobs(perWeek) {
+    const chart = byId("weekly-jobs");
+    if (!chart || !perWeek || !perWeek.length) return;
+    const busiest = Math.max(1, ...perWeek.map(function (w) { return w.count; }));
+    chart.innerHTML = perWeek.map(function (w) {
+      const label = new Date(w.weekStart + "T00:00:00").toLocaleDateString("en-KE", { day: "numeric", month: "short" });
+      return (
+        '<div class="bar" title="Week of ' + esc(label) + ": " + w.count + ' completed">' +
+          '<span class="bar-value">' + w.count + "</span>" +
+          '<span class="bar-fill" style="height:' + Math.round((w.count / busiest) * 100) + '%"></span>' +
+          '<span class="bar-label">' + esc(label) + "</span>" +
+        "</div>"
+      );
+    }).join("");
+  }
+
+  // ---------- build log (building.html) and writing list (writing.html) ----------
+
+  if (typeof UPDATES !== "undefined") {
+    setHtml("updates", UPDATES.map(function (u) {
+      return (
+        '<article class="update">' +
+          '<p class="update-date">' + esc(new Date(u.date + "T00:00:00").toLocaleDateString("en-KE", { day: "numeric", month: "long", year: "numeric" })) + "</p>" +
+          "<h3>" + esc(u.title) + "</h3>" +
+          "<ul>" + u.points.map(function (pt) { return "<li>" + esc(pt) + "</li>"; }).join("") + "</ul>" +
+        "</article>"
+      );
+    }).join(""));
+  }
+
+  if (typeof WRITING !== "undefined") {
+    setHtml("writing-list", WRITING.map(function (w) {
+      return (
+        '<article class="post-card">' +
+          '<p class="update-date">' + esc(new Date(w.date + "T00:00:00").toLocaleDateString("en-KE", { day: "numeric", month: "long", year: "numeric" })) + " · " + esc(w.topic) + "</p>" +
+          '<h3><a href="' + esc(w.href) + '">' + esc(w.title) + "</a></h3>" +
+          "<p>" + esc(w.summary) + "</p>" +
+        "</article>"
+      );
+    }).join(""));
   }
 
   // ---------- contact form: composes an email, sends nothing itself ----------
