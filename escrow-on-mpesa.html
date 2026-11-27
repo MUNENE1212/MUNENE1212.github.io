@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escrow on M-Pesa · Munene Denis</title>
+  <meta name="description" content="How DumuWaks holds a customer's M-Pesa payment in escrow until the job is done, with an append-only ledger, daily reconciliation and payouts that are never sent twice." />
+  <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0e1013" media="(prefers-color-scheme: dark)" />
+  <meta property="og:title" content="Munene Denis · Founder & CTO, Emen" />
+  <meta property="og:description" content="Software platforms, applied AI and connected hardware built for real conditions in Kenya." />
+  <meta property="og:type" content="website" />
+  
+  <meta property="og:image" content="https://munene1212.github.io/assets/img/work/dumuwaks-landing.webp" />
+  <link rel="icon" href="assets/img/monogram.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img src="assets/img/monogram.svg" alt="" width="32" height="32" />
+        <span>Munene Denis</span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="building.html">DumuWaks</a>
+        <a href="index.html#work">Work</a>
+        <a href="writing.html">Writing</a>
+        <a href="about.html">About</a>
+        <a href="index.html#contact" class="nav-cta">Get in touch</a>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">◐</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <article class="article wrap">
+      <header class="article-head">
+        <p class="eyebrow">DumuWaks · payments · 27 November 2026</p>
+        <h1>Holding the money until the job is done: escrow on M-Pesa</h1>
+        <p class="lede">A customer and a fundi who have never met need a reason to trust each other. On DumuWaks that reason is escrow: the customer's money is held until the work is done, then released. Here is how it works and the rules that keep it correct.</p>
+      </header>
+
+      <h2>The problem</h2>
+      <p>Pay a fundi upfront and you risk a job that is never finished. Pay after and the fundi risks never being paid. Most people settle it with cash, haggling and whoever they already know. That keeps good fundis from new customers and keeps customers stuck with whoever a neighbour recommended.</p>
+
+      <h2>The flow</h2>
+      <p>When a fundi accepts a booking, the customer pays the full agreed price by M-Pesa STK push. The money goes into an escrow wallet held with the payment provider IntaSend, separate from the platform's own revenue. Nothing is added to the customer's price.</p>
+      <ol>
+        <li>The fundi can only start travelling once the payment is held.</li>
+        <li>When the fundi marks the job done, the customer confirms and the fundi is paid to M-Pesa or a bank account.</li>
+        <li>If the customer does nothing for three days after completion and reports no problem, the money is released automatically.</li>
+        <li>If the job never starts, the customer is refunded automatically after fourteen days. A dispute freezes the money until an admin resolves it: to the fundi, to the customer, or split.</li>
+      </ol>
+      <p>The platform fee is 7.5% (minimum KES 50, maximum KES 5,000) plus 16% VAT on the fee, taken from the fundi's share. On a typical job the fundi keeps about 91.3% of the price. Collection and payout charges are absorbed by the platform.</p>
+
+      <h2>Keeping every shilling accounted for</h2>
+      <p>Money code fails in boring ways: a webhook arrives twice, a customer double-taps "Pay", a network call times out halfway. Four rules handle them.</p>
+      <ul>
+        <li><strong>An append-only ledger.</strong> Every movement is a ledger entry that can never be edited or deleted; a mistake is corrected with a reversal. An escrow's balance is money in minus money out, and across all escrows that must equal the wallet's real balance. A job checks this every morning at 06:00 and alerts staff on any difference.</li>
+        <li><strong>The provider is the source of truth.</strong> A webhook only triggers a check. The payment status is re-read from IntaSend, and the amount and reference must match, before anything is recorded.</li>
+        <li><strong>Exactly once.</strong> Status changes are compare-and-set, and ledger entries, payouts and webhook events all carry unique keys. A webhook racing a poller, or a customer confirming twice, produces one effect.</li>
+        <li><strong>Never pay twice.</strong> A payout is recorded as initiated before the provider is called. If the call times out and the outcome is unknown, the payout goes to a human for review and is never re-sent automatically.</li>
+      </ul>
+
+      <h2>Where a human still decides</h2>
+      <p>Some payouts wait for an admin: large ones (above KES 50,000 by default), payouts to payout details changed in the last 24 hours, fundis with no payout details yet, and every failed payout. Changing payout details needs a six-digit code sent to the receiving phone, and the account phone is alerted. Test keys are refused in production, and live keys are refused outside it.</p>
+
+      <h2>What it is for</h2>
+      <p>None of this is visible to a customer booking a plumber. What they see is a booking that says <em>Held</em> and a fundi who arrives knowing they will be paid. That is the point: trust that comes from the system, not from knowing someone.</p>
+
+      <footer class="article-foot">
+        <p>DumuWaks is live at <a href="https://dumuwaks.co.ke" target="_blank" rel="noopener">dumuwaks.co.ke</a>. Follow the progress on <a href="building.html">Building DumuWaks</a>, or <a data-email-subject="Escrow on M-Pesa" href="#">email me</a> with questions.</p>
+        <p><a href="writing.html">← All writing</a></p>
+      </footer>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Munene Denis · <a id="company-link" href="#">Emen</a></p>
+      <p class="muted">Static site · no tracking</p>
+    </div>
+  </footer>
+
+  <script src="assets/data/profile.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

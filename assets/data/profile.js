@@ -12,6 +12,8 @@ const PROFILE = {
     linkedin: "https://linkedin.com/in/munenen",
     x: "https://x.com/MunE_nE"
   },
+  // DumuWaks public traction figures (aggregate counts only), shown live on the site
+  tractionUrl: "https://dumuwaks.co.ke/api/v1/public/traction",
   // Drop a professional headshot at assets/img/headshot.jpg and set this to its path.
   headshot: null
 };

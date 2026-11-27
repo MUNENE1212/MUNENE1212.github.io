@@ -8,14 +8,15 @@
      id        short slug, used as an anchor
      name      display name
      division  "tech" | "lighting" | "ai"   (which Emen line it belongs to)
-     status    "live" | "building" | "research"
+     status    "live" | "building" | "research" | "paused" (built, currently offline)
      summary   one or two sentences, outcome first
      stack     short list of technologies
      url       live product link (optional)
      repo      public repository link (optional; leave out for private work)
      featured  true to show as a case study
      story     for featured items: { problem, approach, result }
-     metric    optional headline number, e.g. "30+ active users"
+     metric    optional headline number with a date, only from a verifiable source
+     traction  true to show live figures from DumuWaks' public traction endpoint
      images    optional screenshots: [{ src, alt }] (WebP, ~1200px wide,
                never showing real customers' names or data)
 */
@@ -29,28 +30,27 @@ const PROJECTS = [
     featured: true,
     summary: "A maintenance and repair marketplace for Kenya: technician matching, booking, real-time chat and M-Pesa payments.",
     stack: ["TypeScript", "React", "Node.js", "MongoDB", "Socket.IO", "M-Pesa"],
-    url: "https://dumuwaks.ementech.co.ke",
+    url: "https://dumuwaks.co.ke",
     repo: "https://github.com/MUNENE1212/dumuwaks",
-    metric: "30+ active users",
+    traction: true,
     images: [
       { src: "assets/img/work/dumuwaks-landing.webp", alt: "Dumu Waks landing page: search for maintenance and repair services" },
       { src: "assets/img/work/dumuwaks-dashboard.webp", alt: "Dumu Waks customer dashboard with bookings and quick actions" }
     ],
     story: {
       problem: "Finding a trusted technician is word-of-mouth, and paying one safely is awkward for both sides.",
-      approach: "Matching on location, skills and availability; booking with a fee held in escrow; real-time messaging; M-Pesa STK push and payouts; dashboards for clients, technicians, support and admins.",
-      result: "Live in production with continuous deployment on every merge."
+      approach: "Matching on location, skills and availability; the full price paid by M-Pesa into an escrow wallet and released to the fundi when the customer confirms; an append-only ledger reconciled daily; real-time chat; WhatsApp notifications.",
+      result: "Live at dumuwaks.co.ke with continuous deployment. Next: a one-area pilot with three trades, tracked weekly in public."
     }
   },
   {
     id: "emen-shop",
     name: "Emen Shop",
     division: "tech",
-    status: "live",
+    status: "paused",
     featured: true,
     summary: "An electronics store and installation-services business online: catalogue, cart, orders, accounts, WhatsApp checkout and admin analytics.",
     stack: ["Next.js", "TypeScript", "MongoDB", "WhatsApp"],
-    url: "https://baitech.co.ke",
     images: [
       { src: "assets/img/work/emen-shop-landing.webp", alt: "Emen Shop home page with search and today's offers" },
       { src: "assets/img/work/emen-shop-catalogue.webp", alt: "Emen Shop product catalogue filtered by category" }
@@ -58,7 +58,7 @@ const PROJECTS = [
     story: {
       problem: "A shop selling electronics and installation services needed to sell online without asking customers to trust an unfamiliar card checkout.",
       approach: "Server-rendered storefront for search visibility, products and services in one catalogue, checkout that continues on WhatsApp, and an admin dashboard for orders and analytics.",
-      result: "Live at baitech.co.ke (formerly BaiTech), running on Emen-managed infrastructure."
+      result: "Built and run on Emen-managed infrastructure as baitech.co.ke; currently offline. The storefront pattern now powers Emen client work."
     }
   },
   {
@@ -94,16 +94,15 @@ const PROJECTS = [
     id: "keroma",
     name: "KEROMA",
     division: "ai",
-    status: "live",
+    status: "paused",
     featured: true,
     summary: "African heritage recipes that start from what is already in your kitchen, with the cultural story behind each meal.",
     stack: ["Next.js", "TypeScript", "MongoDB", "LLMs", "M-Pesa"],
-    url: "https://keroma.ementech.co.ke",
     repo: "https://github.com/MUNENE1212/keroma",
     story: {
       problem: "Recipe apps assume Western pantries and say nothing about where a dish comes from.",
       approach: "AI generation with provider fallback so the product keeps working when one model is unavailable, curated heritage articles, and M-Pesa for premium access.",
-      result: "Live, installable as a PWA, and works end to end even before paid AI keys are added."
+      result: "Launched as an installable PWA that works end to end before paid AI keys are added; currently offline. Code is open source."
     }
   },
   {
@@ -186,7 +185,7 @@ const PROJECTS = [
     id: "tomtin",
     name: "TomTin ERP",
     division: "tech",
-    status: "live",
+    status: "paused",
     summary: "Offline-first point of sale and business intelligence for owners running several small businesses — water, laundry, retail, LPG.",
     stack: ["React", "Django", "PostgreSQL", "PWA"]
   },
@@ -229,10 +228,9 @@ const PROJECTS = [
     id: "image-generator",
     name: "Image Generator",
     division: "ai",
-    status: "live",
+    status: "research",
     summary: "A studio for identity-preserving portraits that compares generation strategies side by side with automated quality metrics.",
     stack: ["Python", "Streamlit", "SDXL", "FLUX", "LoRA"],
-    url: "https://image-generator.ementech.co.ke",
     repo: "https://github.com/MUNENE1212/image-generator"
   },
   {
@@ -263,5 +261,6 @@ const DIVISIONS = {
 const STATUS_LABEL = {
   live: "Live",
   building: "In development",
-  research: "Research"
+  research: "Research",
+  paused: "Paused"
 };

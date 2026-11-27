@@ -12,6 +12,8 @@ Static HTML, CSS and plain JavaScript. No build step, no framework, no tracking.
 | Name, role, email, social links, headshot | `assets/data/profile.js` |
 | Case studies, screenshots and the project index | `assets/data/projects.js` |
 | Story, timeline, experience, education, skills | `assets/data/career.js` (About + Résumé) |
+| DumuWaks weekly build log | `assets/data/updates.js` (newest first) |
+| Writing list | `assets/data/writing.js` + one HTML page per article |
 | Page sections (services, process) | `index.html` |
 | Look and feel (colour tokens, light/dark) | `assets/css/site.css` |
 
@@ -26,12 +28,18 @@ those belong in the private `vault` repository.
 
 - `index.html` — services, case studies, more work, process, contact form (opens the visitor's email app)
 - `about.html` — story, milestones, skills, education, principles
+- `building.html` — Building DumuWaks: live figures from `dumuwaks.co.ke/api/v1/public/traction`, pilot goals, weekly build log
+- `writing.html` + articles (e.g. `escrow-on-mpesa.html`)
 - `resume.html` — printable résumé; *Print / save as PDF* produces a 2-page A4 CV from the same data
 
 Content merged from the earlier multi-page portfolio (`plp-final-web-project`) in October 2026.
 
 Screenshots live in `assets/img/work/` as ~1200px WebP. Never use screenshots that show
 real customers' names, messages or data.
+
+Numbers on the site come only from the live DumuWaks endpoint or the dashboard, always with a date.
+If the endpoint is unreachable the page shows a dash and says so — never a made-up figure.
+Products that are offline use status `paused` (no Visit link).
 
 ## Run locally
 

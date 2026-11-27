@@ -40,7 +40,7 @@ const CAREER = {
       period: "2020 – present",
       points: [
         "Lead product, architecture and infrastructure across Emen Tech, Applied AI and Emen Lighting.",
-        "Built and launched DumuWaks (technician marketplace, 30+ active users) and the Emen Shop storefront.",
+        "Built and launched DumuWaks (dumuwaks.co.ke), a repair and maintenance marketplace with M-Pesa escrow, and the Emen Shop storefront.",
         "Shipped KEROMA and Lectern; leading development of ArdaLink drought intelligence and the Emen Signage ESP32 firmware.",
         "Run the production VPS estate: containers, reverse proxy, CI/CD and monitoring."
       ]
